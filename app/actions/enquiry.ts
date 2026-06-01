@@ -1,72 +1,84 @@
 'use server'
 
 import { site } from '@/lib/site'
+import nodemailer from 'nodemailer'
 
 export type EnquiryState = { ok: boolean; error?: string }
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
+function sanitize(s: string, max = 500): string {
+  return s.replace(/[\r\n\t]+/g, ' ').replace(/\s+/g, ' ').trim().slice(0, max)
+}
+
 /**
- * Hero enquiry form handler. Delivers to CONTACT_TO (defaults to the site
- * email). Uses the Resend HTTP API when RESEND_API_KEY is set; otherwise logs
- * to the server (staging fallback) and still returns ok so the UX can be tested.
- * SMTP/provider wiring is finalised by the `smtp-setup` skill.
+ * Hero enquiry form handler. Delivers via Brevo SMTP (nodemailer) — same setup
+ * as autoskola-ezra. Recipient = ENQUIRY_TO (defaults to the site email,
+ * sb.dejan@gmail.com). MAIL_FROM must be a Brevo-verified sender and is kept
+ * distinct from SMTP_USER (Brevo's login is a service identity, not a sender).
+ *
+ * Production env (set on Vercel before the form delivers):
+ *   SMTP_HOST=smtp-relay.brevo.com  SMTP_PORT=465
+ *   SMTP_USER=<account>@smtp-brevo.com  SMTP_PASS=<Brevo SMTP key>
+ *   MAIL_FROM=noreply@apartmanstrong.hr  ENQUIRY_TO=sb.dejan@gmail.com
+ * Without SMTP_HOST the action dry-runs (logs + returns ok) — safe for staging.
  */
 export async function sendEnquiry(
   _prev: EnquiryState,
   formData: FormData,
 ): Promise<EnquiryState> {
-  const email = String(formData.get('email') ?? '').trim()
-  const checkIn = String(formData.get('checkIn') ?? '').trim()
-  const checkOut = String(formData.get('checkOut') ?? '').trim()
-  const message = String(formData.get('message') ?? '').trim()
-  // Honeypot — bots fill this hidden field.
+  // Honeypot — bots fill this hidden field; drop silently with fake success.
   if (String(formData.get('company') ?? '').trim() !== '') return { ok: true }
+
+  const email = sanitize(String(formData.get('email') ?? ''), 200)
+  const checkIn = sanitize(String(formData.get('checkIn') ?? ''), 20)
+  const checkOut = sanitize(String(formData.get('checkOut') ?? ''), 20)
+  const message = sanitize(String(formData.get('message') ?? ''), 1500)
 
   if (!EMAIL_RE.test(email)) return { ok: false, error: 'invalidEmail' }
 
-  const to = process.env.CONTACT_TO || site.email
-  const from = process.env.CONTACT_FROM || `Apartman Strong <noreply@apartmanstrong.hr>`
-  const apiKey = process.env.RESEND_API_KEY
+  const recipient = process.env.ENQUIRY_TO ?? site.email
+  const fromAddr = process.env.MAIL_FROM ?? process.env.SMTP_USER ?? 'noreply@apartmanstrong.hr'
 
-  const text = [
-    `Novi upit s web stranice Apartman Strong`,
-    ``,
-    `Email gosta: ${email}`,
-    `Dolazak: ${checkIn || '—'}`,
-    `Odlazak: ${checkOut || '—'}`,
+  const textBody = [
+    `Novi upit s web stranice — Apartman Strong`,
+    `------------------------------------------`,
+    `Email gosta:  ${email}`,
+    `Dolazak:      ${checkIn || '—'}`,
+    `Odlazak:      ${checkOut || '—'}`,
     ``,
     `Poruka:`,
     message || '—',
   ].join('\n')
 
-  if (!apiKey) {
-    console.warn('[enquiry] RESEND_API_KEY not set — enquiry not emailed:', { email, checkIn, checkOut })
+  // Dev / no-SMTP: log and succeed (safe for staging/QA).
+  if (process.env.NODE_ENV !== 'production' || !process.env.SMTP_HOST) {
+    console.log('[enquiry] (dry-run) message body:\n' + textBody)
     return { ok: true }
   }
 
   try {
-    const res = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT ?? 465),
+      secure: true,
+      auth: {
+        user: process.env.SMTP_USER ?? '',
+        pass: (process.env.SMTP_PASS ?? '').replace(/\\(.)/g, '$1'),
       },
-      body: JSON.stringify({
-        from,
-        to: [to],
-        reply_to: email,
-        subject: `Upit za rezervaciju — ${checkIn || '?'} → ${checkOut || '?'}`,
-        text,
-      }),
     })
-    if (!res.ok) {
-      console.error('[enquiry] Resend error', res.status, await res.text())
-      return { ok: false, error: 'error' }
-    }
+
+    await transporter.sendMail({
+      from: `"Apartman Strong — web" <${fromAddr}>`,
+      to: recipient,
+      replyTo: email,
+      subject: `Upit za rezervaciju — ${checkIn || '?'} → ${checkOut || '?'}`,
+      text: textBody,
+    })
+
     return { ok: true }
   } catch (err) {
-    console.error('[enquiry] send failed', err)
+    console.error('[enquiry] sendMail error:', err)
     return { ok: false, error: 'error' }
   }
 }
