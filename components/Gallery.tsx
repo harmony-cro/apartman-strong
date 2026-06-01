@@ -6,8 +6,16 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { useCallback, useEffect, useState } from 'react'
 
-type Shot = { slug: string; full: string; thumb: string; width: number; height: number }
+type Shot = { slug: string; apartment: number; full: string; thumb: string; width: number; height: number }
 const shots = galleryData as Shot[]
+
+// Group shots by apartment while keeping each shot's global index, so the
+// lightbox can flow across both sections with correct prev/next.
+const indexed = shots.map((s, i) => ({ ...s, index: i }))
+const groups = [
+  { key: 'apartmentOne', items: indexed.filter((s) => s.apartment !== 2) },
+  { key: 'apartmentTwo', items: indexed.filter((s) => s.apartment === 2) },
+].filter((g) => g.items.length > 0)
 
 export function Gallery() {
   const t = useTranslations('gallery')
@@ -36,25 +44,32 @@ export function Gallery() {
 
   return (
     <>
-      <div className="columns-2 gap-4 md:columns-3 lg:columns-4 [&>*]:mb-4">
-        {shots.map((s, i) => (
-          <button
-            key={s.slug}
-            onClick={() => setActive(i)}
-            className="group block w-full overflow-hidden rounded-lg shadow-[var(--shadow-card)] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-            aria-label={`${t('imageAlt')} ${i + 1}`}
-          >
-            <Image
-              src={s.thumb}
-              alt={`${t('imageAlt')} ${i + 1}`}
-              width={s.width}
-              height={s.height}
-              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="h-auto w-full transition-transform duration-500 group-hover:scale-105"
-            />
-          </button>
-        ))}
-      </div>
+      {groups.map((group, gi) => (
+        <section key={group.key} className={gi > 0 ? 'mt-16' : ''}>
+          <h2 className="mb-6 font-heading text-2xl text-foreground md:text-3xl">
+            {t(group.key)}
+          </h2>
+          <div className="columns-2 gap-4 md:columns-3 lg:columns-4 [&>*]:mb-4">
+            {group.items.map((s) => (
+              <button
+                key={s.slug}
+                onClick={() => setActive(s.index)}
+                className="group block w-full overflow-hidden rounded-lg shadow-[var(--shadow-card)] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                aria-label={`${t(group.key)} — ${t('imageAlt')} ${s.index + 1}`}
+              >
+                <Image
+                  src={s.thumb}
+                  alt={`${t(group.key)} — ${t('imageAlt')}`}
+                  width={s.width}
+                  height={s.height}
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  className="h-auto w-full transition-transform duration-500 group-hover:scale-105"
+                />
+              </button>
+            ))}
+          </div>
+        </section>
+      ))}
 
       {active !== null && (
         <div
