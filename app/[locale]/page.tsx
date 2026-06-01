@@ -31,8 +31,8 @@ export default async function HomePage({ params }: Props) {
       <Hero />
       <About />
       <CtaBand />
-      <ApartmentSection which="one" image="/images/apartman-1.webp" />
-      <ApartmentSection which="two" image="/images/apartman-2.webp" reversed />
+      <ApartmentSection which="one" image="/images/gallery/full/strong-08.webp" />
+      <ApartmentSection which="two" image="/images/gallery/full/wa-0007.webp" reversed />
       <HouseRules />
       <Contact />
     </>
