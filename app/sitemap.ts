@@ -3,7 +3,7 @@ import { site } from '@/lib/site'
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ['', '/galerija']
+  const paths = ['']
   const entries: MetadataRoute.Sitemap = []
 
   for (const path of paths) {

@@ -1,5 +1,5 @@
+import { ApartmentGallery } from '@/components/ApartmentGallery'
 import { Icon } from '@/components/Icon'
-import { Link } from '@/i18n/navigation'
 import { site } from '@/lib/site'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
@@ -43,9 +43,11 @@ export function ApartmentSection({ which, image, reversed = false }: Props) {
         <a href={`mailto:${site.email}`} className="label-eyebrow rounded bg-primary px-6 py-3 text-white transition-colors hover:bg-primary-dark">
           {t('book')}
         </a>
-        <Link href="/galerija" className="label-eyebrow rounded border border-accent px-6 py-3 text-accent-ink transition-colors hover:bg-accent hover:text-white">
-          {t('viewGallery')}
-        </Link>
+        <ApartmentGallery
+          apartment={which === 'one' ? 1 : 2}
+          label={t(`${which}.name`)}
+          triggerLabel={t('viewGallery')}
+        />
       </div>
     </div>
   )

@@ -25,7 +25,6 @@ export function Header() {
   const links = [
     { href: '/', label: t('home') },
     { href: '/#apartman', label: t('about') },
-    { href: '/galerija', label: t('gallery') },
     { href: '/#kontakt', label: t('contact') },
   ]
 
