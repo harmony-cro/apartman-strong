@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 
 // A small, curated rotation of room shots pulled from the gallery.
 const SLIDES = [
-  '/images/gallery/full/strong-08.webp', // living room
+  '/images/gallery/full/strong-10-1.webp', // living room
   '/images/gallery/full/strong-13.webp', // bedroom
   '/images/gallery/full/strong-05.webp', // dining
   '/images/gallery/full/strong-22.webp', // kitchen / dining
