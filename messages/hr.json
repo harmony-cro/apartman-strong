@@ -68,7 +68,7 @@
     "note": "Molimo potvrdite detalje prilikom rezervacije.",
     "checkIn": { "title": "Prijava", "text": "15:00 – 24:00" },
     "checkOut": { "title": "Odjava", "text": "07:00 – 11:30" },
-    "cancellation": { "title": "Otkazivanje", "text": "Otkazivanje je dostupno do 3 dana prije dolaska. Nakon toga naplaćuje se puni iznos boravka." },
+    "cancellation": { "title": "Otkazivanje", "text": "Otkazivanje je dostupno do 3 dana prije dolaska." },
     "payment": { "title": "Plaćanje", "text": "Plaćanje se vrši isključivo gotovinom." },
     "pets": { "title": "Kućni ljubimci", "text": "Kućni ljubimci nisu dopušteni u objektu." },
     "smoking": { "title": "Pušenje", "text": "Pušenje u objektu je strogo zabranjeno." }
