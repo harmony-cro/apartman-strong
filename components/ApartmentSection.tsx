@@ -16,13 +16,13 @@ export function ApartmentSection({ which, image, reversed = false }: Props) {
   const paragraphs = [t(`${which}.p1`), t(`${which}.p2`), t(`${which}.p3`)].filter(Boolean)
 
   const imageBlock = (
-    <div className={`relative h-[440px] overflow-hidden rounded-lg shadow-[var(--shadow-card)] md:h-[500px] ${reversed ? 'lg:order-2' : 'lg:order-1'}`}>
+    <div data-reveal className={`relative h-[440px] overflow-hidden rounded-lg shadow-[var(--shadow-card)] md:h-[500px] ${reversed ? 'lg:order-2' : 'lg:order-1'}`}>
       <Image src={image} alt={t(`${which}.name`)} fill sizes="(max-width: 1024px) 100vw, 600px" className="object-cover transition-transform duration-700 hover:scale-105" />
     </div>
   )
 
   const textBlock = (
-    <div className={`space-y-7 rounded-2xl bg-surface-low p-8 md:p-12 ${reversed ? 'lg:order-1' : 'lg:order-2'}`}>
+    <div data-reveal style={{ transitionDelay: '120ms' }} className={`space-y-7 rounded-2xl bg-surface-low p-8 md:p-12 ${reversed ? 'lg:order-1' : 'lg:order-2'}`}>
       <h3 className="font-heading text-2xl text-foreground md:text-3xl">{t(`${which}.name`)}</h3>
       <div className="space-y-4 text-muted-foreground">
         {paragraphs.map((p, i) => (

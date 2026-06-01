@@ -14,7 +14,7 @@ export function CtaBand() {
         sizes="100vw"
         className="object-cover opacity-20"
       />
-      <div className="relative z-10 mx-auto max-w-3xl space-y-8 text-center">
+      <div data-reveal className="relative z-10 mx-auto max-w-3xl space-y-8 text-center">
         <h2 className="font-heading text-3xl font-light italic md:text-4xl">{t('title')}</h2>
         <p className="leading-relaxed text-white/90">{t('body')}</p>
         <div className="pt-2">

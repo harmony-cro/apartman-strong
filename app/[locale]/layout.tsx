@@ -1,6 +1,7 @@
 import './../../app/globals.css'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import { ScrollReveal } from '@/components/ScrollReveal'
 import { routing } from '@/i18n/routing'
 import { site } from '@/lib/site'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
@@ -66,6 +67,15 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} className={`${libreCaslon.variable} ${workSans.variable} h-full scroll-smooth`}>
+      <head>
+        {/* Mark JS as available before paint so reveal start-states only apply
+            with JS enabled (no hidden content for no-JS users / crawlers). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
+      </head>
       <body className="flex min-h-full flex-col antialiased bg-background text-foreground">
         <NextIntlClientProvider messages={messages}>
           <Header />
@@ -73,6 +83,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             {children}
           </main>
           <Footer />
+          <ScrollReveal />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -9,7 +9,7 @@ export function Contact() {
   return (
     <section id="kontakt" className="scroll-mt-24 bg-surface px-5 py-24 md:px-16">
       <div className="mx-auto grid max-w-[var(--container-max)] grid-cols-1 items-center gap-12 lg:grid-cols-2">
-        <div className="space-y-8">
+        <div data-reveal className="space-y-8">
           <div>
             <p className="label-eyebrow text-accent-ink">{t('eyebrow')}</p>
             <h2 className="mt-3 text-3xl text-foreground md:text-4xl">{t('title')}</h2>
@@ -46,7 +46,7 @@ export function Contact() {
           </ul>
         </div>
 
-        <div className="h-[380px] overflow-hidden rounded-xl shadow-[var(--shadow-card)] lg:h-[460px]">
+        <div data-reveal className="h-[380px] overflow-hidden rounded-xl shadow-[var(--shadow-card)] lg:h-[460px]" style={{ transitionDelay: '150ms' }}>
           <iframe
             title={t('mapTitle')}
             src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
