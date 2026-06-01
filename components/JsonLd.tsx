@@ -14,7 +14,12 @@ export function JsonLd({ description }: { description: string }) {
     url: site.url,
     telephone: site.phone.tel,
     email: site.email,
-    image: `${site.url}/images/hero.webp`,
+    image: [
+      `${site.url}/images/gallery/full/strong-08.webp`,
+      `${site.url}/images/gallery/full/strong-13.webp`,
+      `${site.url}/images/gallery/full/strong-05.webp`,
+      `${site.url}/images/gallery/full/strong-22.webp`,
+    ],
     priceRange: '€€',
     starRating: { '@type': 'Rating', ratingValue: '5' },
     address: {

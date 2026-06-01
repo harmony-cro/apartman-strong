@@ -22,5 +22,7 @@ Website: https://apartmanstrong.hr
 
 ## Pages
 - Home: https://apartmanstrong.hr/
-- Gallery: https://apartmanstrong.hr/galerija
 - English: https://apartmanstrong.hr/en
+
+Photo galleries for each apartment are available on the home page via the
+"Full gallery" button in each apartment's section.

@@ -16,29 +16,41 @@ const SLIDES = [
 export function Hero() {
   const t = useTranslations('hero')
   const [idx, setIdx] = useState(0)
+  // Only slide 0 is server-rendered (priority LCP image); the rest mount after
+  // hydration so the browser doesn't fetch 4 full-size hero images up front.
+  const [ready, setReady] = useState(false)
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    const id = setInterval(() => setIdx((i) => (i + 1) % SLIDES.length), 6000)
-    return () => clearInterval(id)
+    // Mount the remaining slides after first paint.
+    const raf = requestAnimationFrame(() => setReady(true))
+    let id: ReturnType<typeof setInterval> | undefined
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      id = setInterval(() => setIdx((i) => (i + 1) % SLIDES.length), 6000)
+    }
+    return () => {
+      cancelAnimationFrame(raf)
+      if (id) clearInterval(id)
+    }
   }, [])
 
   return (
     <header className="relative flex min-h-screen items-center px-5 pb-12 pt-28 md:px-16">
       <div className="absolute inset-0 overflow-hidden">
-        {SLIDES.map((src, i) => (
-          <Image
-            key={src}
-            src={src}
-            alt=""
-            fill
-            priority={i === 0}
-            sizes="100vw"
-            className={`object-cover transition-opacity duration-[1800ms] ease-in-out ${
-              i === idx ? 'opacity-100' : 'opacity-0'
-            } ${i === idx ? 'animate-hero-pan' : ''}`}
-          />
-        ))}
+        {SLIDES.map((src, i) =>
+          i === 0 || ready ? (
+            <Image
+              key={src}
+              src={src}
+              alt=""
+              fill
+              priority={i === 0}
+              sizes="100vw"
+              className={`object-cover transition-opacity duration-[1800ms] ease-in-out ${
+                i === idx ? 'opacity-100' : 'opacity-0'
+              } ${i === idx ? 'animate-hero-pan' : ''}`}
+            />
+          ) : null,
+        )}
       </div>
       <div className="absolute inset-0 bg-black/30" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
