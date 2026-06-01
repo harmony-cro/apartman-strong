@@ -36,21 +36,23 @@ export function Hero() {
   return (
     <header className="relative flex min-h-screen items-center px-5 pb-12 pt-28 md:px-16">
       <div className="absolute inset-0 overflow-hidden">
-        {SLIDES.map((src, i) =>
-          i === 0 || ready ? (
-            <Image
-              key={src}
-              src={src}
-              alt=""
-              fill
-              priority={i === 0}
-              sizes="100vw"
-              className={`object-cover transition-opacity duration-[1800ms] ease-in-out ${
-                i === idx ? 'opacity-100' : 'opacity-0'
-              } ${i === idx ? 'animate-hero-pan' : ''}`}
-            />
-          ) : null,
-        )}
+        <div className="hero-kenburns absolute inset-0">
+          {SLIDES.map((src, i) =>
+            i === 0 || ready ? (
+              <Image
+                key={src}
+                src={src}
+                alt=""
+                fill
+                priority={i === 0}
+                sizes="100vw"
+                className={`object-cover transition-opacity duration-[1800ms] ease-in-out ${
+                  i === idx ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            ) : null,
+          )}
+        </div>
       </div>
       <div className="absolute inset-0 bg-black/30" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

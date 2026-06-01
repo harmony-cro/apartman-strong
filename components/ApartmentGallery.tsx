@@ -5,6 +5,7 @@ import galleryData from '@/data/gallery.json'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 
 type Shot = { slug: string; apartment: number; full: string; thumb: string; width: number; height: number }
 const allShots = galleryData as Shot[]
@@ -73,13 +74,14 @@ export function ApartmentGallery({ apartment, label, triggerLabel }: Props) {
         <span className="opacity-70">({shots.length})</span>
       </button>
 
-      {open && (
-        <div
-          className="fixed inset-0 z-[100] flex flex-col bg-black/92 backdrop-blur-sm"
-          role="dialog"
-          aria-modal="true"
-          aria-label={label}
-        >
+      {open &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-[100] flex flex-col bg-black/92 backdrop-blur-sm"
+            role="dialog"
+            aria-modal="true"
+            aria-label={label}
+          >
           {/* Header */}
           <div className="flex shrink-0 items-center justify-between px-4 py-4 text-white md:px-8">
             <p className="font-heading text-lg md:text-xl">
@@ -152,8 +154,9 @@ export function ApartmentGallery({ apartment, label, triggerLabel }: Props) {
               </button>
             ))}
           </div>
-        </div>
-      )}
+          </div>,
+          document.body,
+        )}
     </>
   )
 }
