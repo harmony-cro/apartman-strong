@@ -1,0 +1,26 @@
+# Apartman Strong
+
+> Apartman Strong is a five-star apartment rental in Slavonski Brod, Croatia,
+> offering two modern, luxuriously furnished apartments for short stays.
+
+Location: Naselje Andrije Hebranga 2/6, 35000 Slavonski Brod, Croatia
+Phone: +385 91 893 5340
+Email: sb.dejan@gmail.com
+Website: https://apartmanstrong.hr
+
+## Apartments
+- Apartman Strong 1 — spacious unit with a carefully appointed living room, bedroom and a luxury bathroom.
+- Apartman Strong 2 — ideal for couples or small families; tastefully decorated interior with a private terrace, minutes from the city centre.
+
+## House rules
+- Check in: 15:00–24:00
+- Check out: 07:00–11:30
+- Cancellation: free up to 3 days before arrival
+- Payment: cash only
+- Pets: not allowed
+- Smoking: not permitted indoors
+
+## Pages
+- Home: https://apartmanstrong.hr/
+- Gallery: https://apartmanstrong.hr/galerija
+- English: https://apartmanstrong.hr/en

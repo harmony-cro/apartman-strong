@@ -1,0 +1,100 @@
+@import 'tailwindcss';
+
+/* ───────────────────────────────────────────────────────────────────────────
+   Apartman Strong — "Organic Sophistication" design tokens (from stitch handoff)
+   70% warm neutral / 20% deep-forest / 10% brushed-gold. Never pure white/black.
+   ─────────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Core brand palette */
+  --warm-ivory: #fcfaf8;
+  --deep-forest: #1a4548; /* primary actions, dark sections, footer */
+  --deep-forest-dark: #002e31; /* button :hover */
+  --brushed-gold: #c5a377; /* accent: links, secondary btn border, icons, active nav */
+  --soft-graphite: #4a4a4a;
+
+  /* Surfaces (warm-tinted) */
+  --background: #fff8f5;
+  --surface: #fff8f5;
+  --surface-lowest: #ffffff;
+  --surface-low: #fbf2ed; /* tinted card panels */
+  --surface-container: #f5ece7; /* icon-circle bg */
+  --surface-high: #efe6e2;
+  --surface-variant: #e9e1dc;
+
+  /* Text */
+  --foreground: #1e1b18;
+  --muted-foreground: #404849;
+  --on-primary: #ffffff;
+
+  /* Lines */
+  --border: #e9e1dc;
+  --outline-variant: #c0c8c8; /* input underlines, hairlines */
+  --error: #ba1a1a;
+
+  /* Radius — architectural, restrained */
+  --radius: 0.25rem; /* 4px base ("Soft") */
+  --radius-img: 0.5rem; /* 8px grid-card images */
+
+  /* Spacing / layout */
+  --container-max: 1200px;
+  --margin-desktop: 64px;
+  --margin-mobile: 20px;
+
+  /* Elevation — soft, high-diffusion (no heavy shadows) */
+  --shadow-card-soft: 0 4px 20px rgba(0, 0, 0, 0.03);
+  --shadow-float-soft: 0 8px 30px rgba(0, 0, 0, 0.1); /* booking widget */
+  --shadow-nav-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-low: var(--surface-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-high: var(--surface-high);
+  --color-surface-variant: var(--surface-variant);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-primary: var(--deep-forest);
+  --color-primary-dark: var(--deep-forest-dark);
+  --color-primary-foreground: var(--on-primary);
+  --color-accent: var(--brushed-gold);
+
+  --color-ivory: var(--warm-ivory);
+  --color-border: var(--border);
+  --color-outline: var(--outline-variant);
+
+  --font-heading: 'Libre Caslon Text', ui-serif, Georgia, serif;
+  --font-body: 'Work Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: var(--shadow-card-soft);
+  --shadow-float: var(--shadow-float-soft);
+  --shadow-nav: var(--shadow-nav-soft);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* Uppercase tracked label utility (DESIGN.md: "AVAILABILITY") */
+.label-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}

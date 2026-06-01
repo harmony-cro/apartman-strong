@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "siteName": "Apartman Strong",
+    "homeTitle": "Apartman Strong — Luksuzni smještaj u Slavonskom Brodu",
+    "homeDescription": "Apartman Strong nudi ekskluzivan smještaj s pet zvjezdica u Slavonskom Brodu. Moderan dizajn, premium namještaj i mirna lokacija nadomak centra grada.",
+    "galleryTitle": "Galerija",
+    "galleryDescription": "Pogledajte fotografije Apartmana Strong — dnevni boravak, spavaće sobe, kupaonice i interijer našeg luksuznog smještaja u Slavonskom Brodu."
+  },
+  "nav": {
+    "home": "Početna",
+    "about": "O apartmanu",
+    "gallery": "Galerija",
+    "contact": "Kontakt",
+    "menu": "Izbornik"
+  },
+  "hero": {
+    "brand": "Apartman Strong",
+    "tagline": "Pružamo dodatnu notu odmora!"
+  },
+  "form": {
+    "eyebrow": "Provjerite dostupnost",
+    "email": "Email adresa",
+    "emailPlaceholder": "Unesite email adresu",
+    "checkIn": "Dolazak",
+    "checkOut": "Odlazak",
+    "message": "Poruka",
+    "messagePlaceholder": "Vaša poruka (nije obavezno)",
+    "submit": "Pošaljite upit",
+    "sending": "Slanje…",
+    "success": "Hvala! Vaš upit je poslan. Javit ćemo vam se uskoro.",
+    "error": "Slanje nije uspjelo. Pokušajte ponovno ili nas nazovite na 091 893 5340.",
+    "invalidEmail": "Unesite ispravnu email adresu."
+  },
+  "about": {
+    "eyebrow": "O apartmanu",
+    "title": "Ekskluzivan i vrhunski odmor!",
+    "p1": "Zakoračite u svijet elegancije dok ulazite u naš apartman s pet zvjezdica.",
+    "p2": "Svaki aspekt prostora pažljivo je odabran kako bi ponudio besprijekoran spoj raskoši i funkcionalnosti.",
+    "p3": "Od trenutka kada pređete prag, dočekat će vas suvremeni i moderni dizajn, premium namještaj te osjećaj veličanstvenosti koji prožima svaki kutak.",
+    "cta": "Rezervirajte odmah"
+  },
+  "ctaBand": {
+    "title": "Tražite ugodan smještaj?",
+    "body": "Smještaj u izvrsnoj lokaciji, naš apartman s pet zvjezdica nudi vam praktičan pristup najboljem što područje nudi. Bilo da želite istražiti živopisni gradski krajolik, uživati u gastronomskim delicijama ili se uroniti u kulturne atrakcije, sve je na dohvat ruke, omogućavajući vam da iskoristite svoj boravak u potpunosti.",
+    "cta": "Kontaktirajte nas"
+  },
+  "apartments": {
+    "eyebrow": "Naši apartmani",
+    "one": {
+      "name": "Apartman Strong 1",
+      "p1": "Uživajte u prostranosti i privatnosti našeg jedinstvenog apartmana koji je pažljivo osmišljen kako bi zadovoljio svaku vašu potrebu.",
+      "p2": "Pažljivo uređeni dnevni boravak pruža harmoničan spoj udobnosti i stila, gdje se možete opustiti u luksuznom okruženju.",
+      "p3": "Spavaća soba vas mami mekanim posteljinom osiguravajući miran san, dok kupaonica pruža utočište raskoši, opremljeno ekskluzivnim sadržajima i dizajnerskim elementima."
+    },
+    "two": {
+      "name": "Apartman Strong 2",
+      "p1": "U ponudi je i naš drugi apartman, idealan za parove ili manje obitelji. S ukusno uređenim interijerom, privatnom terasom i modernim sadržajima, pruža sve što je potrebno za ugodan i opuštajući boravak.",
+      "p2": "Smješten je u mirnom dijelu, a centar grada nalazi se na svega nekoliko minuta hoda. Uživajte u komforu i privatnosti uz domaćinsku atmosferu.",
+      "p3": ""
+    },
+    "book": "Rezervirajte odmah",
+    "houseRules": "Kućna pravila",
+    "viewGallery": "Sva galerija"
+  },
+  "houseRules": {
+    "eyebrow": "Dobro je znati",
+    "title": "Kućna pravila",
+    "note": "Molimo potvrdite detalje prilikom rezervacije.",
+    "checkIn": { "title": "Prijava", "text": "15:00 – 24:00" },
+    "checkOut": { "title": "Odjava", "text": "07:00 – 11:30" },
+    "cancellation": { "title": "Otkazivanje", "text": "Otkazivanje je dostupno do 3 dana prije dolaska. Nakon toga naplaćuje se puni iznos boravka." },
+    "payment": { "title": "Plaćanje", "text": "Plaćanje se vrši isključivo gotovinom." },
+    "pets": { "title": "Kućni ljubimci", "text": "Kućni ljubimci nisu dopušteni u objektu." },
+    "smoking": { "title": "Pušenje", "text": "Pušenje u objektu je strogo zabranjeno." }
+  },
+  "gallery": {
+    "eyebrow": "Galerija",
+    "title": "Zavirite u Apartman Strong",
+    "intro": "Pogledajte fotografije našeg luksuznog smještaja — od prostranog dnevnog boravka do pažljivo uređenih spavaćih soba i kupaonica.",
+    "imageAlt": "Fotografija interijera Apartmana Strong",
+    "close": "Zatvori",
+    "prev": "Prethodna",
+    "next": "Sljedeća"
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Javite nam se",
+    "intro": "Za rezervacije i upite slobodno nam se obratite telefonom, e-poštom ili putem obrasca.",
+    "phone": "Telefon",
+    "email": "Email",
+    "address": "Adresa",
+    "mapTitle": "Lokacija Apartmana Strong na karti"
+  },
+  "footer": {
+    "tagline": "Pružamo dodatnu notu odmora!",
+    "contact": "Kontakt",
+    "follow": "Pratite nas",
+    "rights": "Sva prava pridržana.",
+    "builtBy": "Izradio"
+  }
+}
