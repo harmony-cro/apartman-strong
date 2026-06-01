@@ -38,16 +38,13 @@ export async function generateMetadata({ params }: Props) {
     title: { default: t('homeTitle'), template: `%s | ${t('siteName')}` },
     description: t('homeDescription'),
     icons: { icon: '/favicon.png', apple: '/favicon.png' },
-    alternates: {
-      canonical: locale === 'hr' ? '/' : `/${locale}`,
-      languages: { hr: '/', en: '/en' },
-    },
+    // Per-route canonical/alternates/og:url are set in each page's
+    // generateMetadata (a deeper segment doesn't reliably override these here).
     openGraph: {
       type: 'website',
       siteName: t('siteName'),
       title: t('homeTitle'),
       description: t('homeDescription'),
-      url: site.url,
       locale: locale === 'hr' ? 'hr_HR' : 'en_US',
       images: [{ url: '/og.jpg', width: 1200, height: 630, alt: t('siteName') }],
     },

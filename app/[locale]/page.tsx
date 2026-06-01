@@ -9,6 +9,17 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 
 type Props = { params: Promise<{ locale: string }> }
 
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params
+  return {
+    alternates: {
+      canonical: locale === 'hr' ? '/' : `/${locale}`,
+      languages: { hr: '/', en: '/en', 'x-default': '/' },
+    },
+    openGraph: { url: locale === 'hr' ? '/' : `/${locale}` },
+  }
+}
+
 export default async function HomePage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)

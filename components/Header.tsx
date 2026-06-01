@@ -124,7 +124,7 @@ function LocaleSwitcher({ current, dark }: { current: string; dark: boolean }) {
           <button
             onClick={() => router.replace(`/${loc}${pathname === '/' ? '' : pathname}`)}
             className={`text-xs font-semibold uppercase transition-colors hover:text-accent ${
-              loc === current ? 'text-accent' : ''
+              loc === current ? (dark ? 'text-accent' : 'text-accent-ink') : ''
             }`}
             aria-current={loc === current ? 'true' : undefined}
           >

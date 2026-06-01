@@ -20,7 +20,7 @@ export function CtaBand() {
         <div className="pt-2">
           <a
             href={`tel:${site.phone.tel}`}
-            className="label-eyebrow inline-block rounded bg-accent px-10 py-4 tracking-[0.15em] text-white shadow-md transition-opacity hover:opacity-90"
+            className="label-eyebrow inline-block rounded bg-accent px-10 py-4 tracking-[0.15em] text-primary-dark shadow-md transition-opacity hover:opacity-90"
           >
             {t('cta')}
           </a>

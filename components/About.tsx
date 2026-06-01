@@ -10,7 +10,7 @@ export function About() {
     <section id="apartman" className="scroll-mt-24 bg-surface px-5 py-24 md:px-16">
       <div className="mx-auto grid max-w-[var(--container-max)] grid-cols-1 items-center gap-8 lg:grid-cols-12">
         <div className="space-y-8 lg:col-span-5 lg:pr-12">
-          <p className="label-eyebrow text-accent">{t('eyebrow')}</p>
+          <p className="label-eyebrow text-accent-ink">{t('eyebrow')}</p>
           <h2 className="text-3xl text-foreground md:text-4xl">{t('title')}</h2>
           <div className="space-y-4 text-muted-foreground">
             <p>{t('p1')}</p>
@@ -19,7 +19,7 @@ export function About() {
           </div>
           <Link
             href={`mailto:${site.email}`}
-            className="label-eyebrow inline-block rounded border border-accent px-8 py-3 text-accent transition-colors hover:bg-accent hover:text-white"
+            className="label-eyebrow inline-block rounded border border-accent px-8 py-3 text-accent-ink transition-colors hover:bg-accent hover:text-white"
           >
             {t('cta')}
           </Link>

@@ -9,7 +9,8 @@
   --warm-ivory: #fcfaf8;
   --deep-forest: #1a4548; /* primary actions, dark sections, footer */
   --deep-forest-dark: #002e31; /* button :hover */
-  --brushed-gold: #c5a377; /* accent: links, secondary btn border, icons, active nav */
+  --brushed-gold: #c5a377; /* accent: borders, icons, decorative — and text on DARK surfaces */
+  --brushed-gold-ink: #8a6a3a; /* darker gold: text/labels/links on LIGHT surfaces (WCAG AA ≥4.5:1) */
   --soft-graphite: #4a4a4a;
 
   /* Surfaces (warm-tinted) */
@@ -60,6 +61,7 @@
   --color-primary-dark: var(--deep-forest-dark);
   --color-primary-foreground: var(--on-primary);
   --color-accent: var(--brushed-gold);
+  --color-accent-ink: var(--brushed-gold-ink);
 
   --color-ivory: var(--warm-ivory);
   --color-border: var(--border);

@@ -31,19 +31,19 @@ export function ApartmentSection({ which, image, reversed = false }: Props) {
       </div>
       <ul className="space-y-3 border-t border-outline/30 pt-5 text-foreground">
         <li className="flex items-start gap-3">
-          <Icon name="location" className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+          <Icon name="location" className="mt-0.5 h-5 w-5 shrink-0 text-accent-ink" />
           <span>{site.address}</span>
         </li>
         <li className="flex items-center gap-3">
-          <Icon name="phone" className="h-5 w-5 shrink-0 text-accent" />
-          <a href={`tel:${site.phone.tel}`} className="transition-colors hover:text-accent">{site.phone.display}</a>
+          <Icon name="phone" className="h-5 w-5 shrink-0 text-accent-ink" />
+          <a href={`tel:${site.phone.tel}`} className="transition-colors hover:text-accent-ink">{site.phone.display}</a>
         </li>
       </ul>
       <div className="flex flex-wrap gap-4 pt-2">
         <a href={`mailto:${site.email}`} className="label-eyebrow rounded bg-primary px-6 py-3 text-white transition-colors hover:bg-primary-dark">
           {t('book')}
         </a>
-        <Link href="/galerija" className="label-eyebrow rounded border border-accent px-6 py-3 text-accent transition-colors hover:bg-accent hover:text-white">
+        <Link href="/galerija" className="label-eyebrow rounded border border-accent px-6 py-3 text-accent-ink transition-colors hover:bg-accent hover:text-white">
           {t('viewGallery')}
         </Link>
       </div>

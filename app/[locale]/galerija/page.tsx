@@ -9,6 +9,15 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: t('galleryTitle'),
     description: t('galleryDescription'),
+    alternates: {
+      canonical: locale === 'hr' ? '/galerija' : `/${locale}/galerija`,
+      languages: { hr: '/galerija', en: '/en/galerija', 'x-default': '/galerija' },
+    },
+    openGraph: {
+      title: t('galleryTitle'),
+      description: t('galleryDescription'),
+      url: locale === 'hr' ? '/galerija' : `/${locale}/galerija`,
+    },
   }
 }
 
@@ -21,7 +30,7 @@ export default async function GalleryPage({ params }: Props) {
     <section className="bg-surface px-5 pb-24 pt-32 md:px-16">
       <div className="mx-auto max-w-[var(--container-max)]">
         <div className="mb-12 max-w-2xl">
-          <p className="label-eyebrow text-accent">{t('eyebrow')}</p>
+          <p className="label-eyebrow text-accent-ink">{t('eyebrow')}</p>
           <h1 className="mt-3 text-4xl text-foreground md:text-5xl">{t('title')}</h1>
           <p className="mt-4 text-muted-foreground">{t('intro')}</p>
         </div>

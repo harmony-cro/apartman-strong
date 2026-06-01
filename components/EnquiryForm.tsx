@@ -28,7 +28,7 @@ export function EnquiryForm() {
       action={formAction}
       className="rounded border border-white/20 bg-surface/95 p-8 shadow-[var(--shadow-float)] backdrop-blur-sm"
     >
-      <p className="label-eyebrow mb-6 text-accent">{t('eyebrow')}</p>
+      <p className="label-eyebrow mb-6 text-accent-ink">{t('eyebrow')}</p>
 
       {/* Honeypot */}
       <input type="text" name="company" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
