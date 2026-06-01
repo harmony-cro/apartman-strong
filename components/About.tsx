@@ -28,10 +28,10 @@ export function About() {
         <div data-reveal className="lg:col-span-7" style={{ transitionDelay: '150ms' }}>
           <div className="grid grid-cols-2 gap-4">
             <div className="relative mt-8 aspect-[3/4] overflow-hidden rounded-lg shadow-[var(--shadow-card)]">
-              <Image src="/images/about-1.webp" alt="" fill sizes="(max-width: 1024px) 45vw, 320px" className="object-cover transition-transform duration-700 hover:scale-105" />
+              <Image src="/images/gallery/full/strong-10-1.webp" alt="" fill sizes="(max-width: 1024px) 45vw, 320px" className="object-cover transition-transform duration-700 hover:scale-105" />
             </div>
             <div className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-[var(--shadow-card)]">
-              <Image src="/images/gallery/full/wa-0016.webp" alt="" fill sizes="(max-width: 1024px) 45vw, 320px" className="object-cover transition-transform duration-700 hover:scale-105" />
+              <Image src="/images/gallery/full/wa-0009.webp" alt="" fill sizes="(max-width: 1024px) 45vw, 320px" className="object-cover transition-transform duration-700 hover:scale-105" />
             </div>
           </div>
         </div>
