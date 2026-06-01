@@ -1,10 +1,10 @@
 {
   "meta": {
     "siteName": "Apartman Strong",
-    "homeTitle": "Apartman Strong — Luxury Stay in Slavonski Brod",
-    "homeDescription": "Apartman Strong offers an exclusive five-star apartment stay in Slavonski Brod. Modern design, premium furnishings and a quiet location moments from the city centre.",
+    "homeTitle": "Apartman Strong — Luxury Apartment in Slavonski Brod",
+    "homeDescription": "An exclusive five-star apartment in Slavonski Brod — contemporary design, premium furnishings and a calm setting just minutes from the city centre.",
     "galleryTitle": "Gallery",
-    "galleryDescription": "Browse photos of Apartman Strong — the living room, bedrooms, bathrooms and interior of our luxury apartment in Slavonski Brod."
+    "galleryDescription": "See inside Apartman Strong — the living room, bedrooms, bathrooms and interior of our luxury apartment in Slavonski Brod."
   },
   "nav": {
     "home": "Home",
@@ -15,7 +15,7 @@
   },
   "hero": {
     "brand": "Apartman Strong",
-    "tagline": "An added touch to your holiday."
+    "tagline": "An added note to your holiday."
   },
   "form": {
     "eyebrow": "Check availability",
@@ -27,35 +27,35 @@
     "messagePlaceholder": "Your message (optional)",
     "submit": "Send enquiry",
     "sending": "Sending…",
-    "success": "Thank you! Your enquiry has been sent. We will get back to you shortly.",
-    "error": "Sending failed. Please try again or call us on +385 91 893 5340.",
+    "success": "Thank you — your enquiry is on its way. We'll be in touch shortly.",
+    "error": "Something went wrong. Please try again, or call us on +385 91 893 5340.",
     "invalidEmail": "Please enter a valid email address."
   },
   "about": {
     "eyebrow": "The apartment",
-    "title": "An exclusive, first-class getaway",
-    "p1": "Step into a world of elegance as you enter our five-star apartment.",
-    "p2": "Every detail of the space has been carefully chosen to offer a seamless blend of luxury and functionality.",
-    "p3": "From the moment you cross the threshold, you are welcomed by contemporary, modern design, premium furniture and a sense of grandeur that fills every corner.",
+    "title": "An exclusive, first-class escape",
+    "p1": "Step into a world of quiet elegance the moment you arrive at our five-star apartment.",
+    "p2": "Every detail has been chosen with care, striking an effortless balance between luxury and everyday comfort.",
+    "p3": "From the moment you cross the threshold, contemporary design, premium furnishings and a refined sense of space greet you in every corner.",
     "cta": "Book now"
   },
   "ctaBand": {
-    "title": "Looking for a comfortable stay?",
-    "body": "Set in an excellent location, our five-star apartment gives you easy access to the best the area has to offer. Whether you want to explore the vibrant cityscape, enjoy local cuisine or immerse yourself in cultural attractions, everything is within reach so you can make the most of your stay.",
-    "cta": "Contact us"
+    "title": "Looking for a place to feel at home?",
+    "body": "Perfectly placed, our five-star apartment puts the best of the area within easy reach. Whether you're drawn to the city's lively streets, its restaurants or its cultural sights, everything is close at hand — so you can make the most of every moment of your stay.",
+    "cta": "Get in touch"
   },
   "apartments": {
     "eyebrow": "Our apartments",
     "one": {
       "name": "Apartman Strong 1",
-      "p1": "Enjoy the space and privacy of our unique apartment, thoughtfully designed to meet your every need.",
-      "p2": "The carefully appointed living room offers a harmonious blend of comfort and style, where you can relax in luxurious surroundings.",
-      "p3": "The bedroom invites you with soft linens for a restful night, while the bathroom is a haven of luxury, fitted with exclusive amenities and designer details."
+      "p1": "Enjoy the space and privacy of our one-of-a-kind apartment, thoughtfully designed around your every need.",
+      "p2": "The living room is appointed for comfort and style in equal measure — a place to unwind in genuinely luxurious surroundings.",
+      "p3": "The bedroom welcomes you with soft, inviting linens for a restful night, while the bathroom is a small sanctuary of its own, finished with exclusive touches and designer detail."
     },
     "two": {
       "name": "Apartman Strong 2",
-      "p1": "We also offer a second apartment, ideal for couples or small families. With a tastefully decorated interior, a private terrace and modern amenities, it provides everything you need for a pleasant, relaxing stay.",
-      "p2": "Set in a quiet part of town, with the city centre just a few minutes' walk away. Enjoy comfort and privacy with a warm, welcoming atmosphere.",
+      "p1": "Our second apartment is ideal for couples or smaller families. With a tastefully styled interior, a private terrace and modern comforts, it has everything you need for a relaxed, easy stay.",
+      "p2": "Tucked into a quiet part of town, with the centre just a few minutes on foot, it offers comfort and privacy alongside a warm, welcoming feel.",
       "p3": ""
     },
     "book": "Book now",
@@ -65,19 +65,19 @@
   "houseRules": {
     "eyebrow": "Good to know",
     "title": "House rules",
-    "note": "Please confirm details at the time of booking.",
+    "note": "Please confirm the details when you book.",
     "checkIn": { "title": "Check in", "text": "3:00 PM – 12:00 AM" },
     "checkOut": { "title": "Check out", "text": "7:00 AM – 11:30 AM" },
-    "cancellation": { "title": "Cancellation", "text": "Free cancellation up to 3 days before arrival. After that, the full amount of the stay is charged." },
-    "payment": { "title": "Payment", "text": "Payment is accepted in cash only." },
+    "cancellation": { "title": "Cancellation", "text": "Free cancellation up to 3 days before arrival; after that, the full cost of the stay applies." },
+    "payment": { "title": "Payment", "text": "Payment is in cash only." },
     "pets": { "title": "Pets", "text": "Pets are not allowed on the premises." },
-    "smoking": { "title": "Smoking", "text": "Smoking inside the property is strictly prohibited." }
+    "smoking": { "title": "Smoking", "text": "Smoking is not permitted indoors." }
   },
   "gallery": {
     "eyebrow": "Gallery",
     "title": "Take a look inside Apartman Strong",
-    "intro": "Browse photos of our luxury stay — from the spacious living room to the carefully appointed bedrooms and bathrooms.",
-    "imageAlt": "Interior photo of Apartman Strong",
+    "intro": "Browse our luxury apartment — from the spacious living room to the carefully appointed bedrooms and bathrooms.",
+    "imageAlt": "Interior of Apartman Strong",
     "close": "Close",
     "prev": "Previous",
     "next": "Next"
@@ -85,14 +85,14 @@
   "contact": {
     "eyebrow": "Contact",
     "title": "Get in touch",
-    "intro": "For reservations and enquiries, feel free to reach us by phone, email or through the form.",
+    "intro": "For bookings and enquiries, reach us by phone, email or the form below — we're always happy to help.",
     "phone": "Phone",
     "email": "Email",
     "address": "Address",
     "mapTitle": "Location of Apartman Strong on the map"
   },
   "footer": {
-    "tagline": "An added touch to your holiday.",
+    "tagline": "An added note to your holiday.",
     "contact": "Contact",
     "follow": "Follow us",
     "rights": "All rights reserved.",
