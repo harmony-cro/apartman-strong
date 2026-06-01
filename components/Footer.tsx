@@ -1,6 +1,7 @@
 import { Icon } from '@/components/Icon'
 import { site } from '@/lib/site'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 
 export function Footer() {
   const t = useTranslations('footer')
@@ -12,10 +13,13 @@ export function Footer() {
       <div className="mx-auto grid max-w-[var(--container-max)] gap-12 md:grid-cols-3">
         {/* Brand */}
         <div className="flex flex-col items-center text-center md:items-start md:text-left">
-          <Icon name="home" className="mb-4 h-9 w-9 text-accent" />
-          <h2 className="mb-2 font-heading text-xl font-bold uppercase tracking-[0.12em]">
-            {site.name}
-          </h2>
+          <Image
+            src="/logo.png"
+            alt={site.name}
+            width={150}
+            height={70}
+            className="mb-4 h-16 w-auto"
+          />
           <p className="max-w-xs text-sm text-white/80">{t('tagline')}</p>
         </div>
 

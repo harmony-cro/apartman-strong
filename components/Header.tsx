@@ -5,6 +5,7 @@ import { Link, usePathname } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import { site } from '@/lib/site'
 import { useLocale, useTranslations } from 'next-intl'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
@@ -53,13 +54,15 @@ export function Header() {
               </a>
             )}
           </div>
-          <Link
-            href="/"
-            className={`font-heading text-lg font-bold uppercase tracking-[0.12em] transition-colors ${
-              scrolled || open ? 'text-primary' : 'text-white'
-            }`}
-          >
-            {site.name}
+          <Link href="/" aria-label={site.name} className="block">
+            <Image
+              src={scrolled || open ? '/logo-dark.png' : '/logo.png'}
+              alt={site.name}
+              width={150}
+              height={70}
+              priority
+              className="h-11 w-auto"
+            />
           </Link>
         </div>
 
